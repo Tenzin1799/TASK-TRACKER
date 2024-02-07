@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.tasktracker.SceneController">
+    <children>
+        <AnchorPane layoutX="46.0" layoutY="53.0" prefHeight="464.0" prefWidth="909.0">
+            <children>
+                <AnchorPane prefHeight="477.0" prefWidth="48.0" style="-fx-background-color: white; -fx-border-radius: 50%;">
+                    <children>
+                        <AnchorPane prefHeight="20.0" prefWidth="48.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 6;">
+                            <children>
+                                <Label layoutX="8.0" layoutY="2.0" text="12 AM" AnchorPane.leftAnchor="8.0" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="460.0" prefHeight="20.0" prefWidth="48.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 6;">
+                            <children>
+                                <Label layoutX="9.0" layoutY="2.0" text="11 PM" AnchorPane.leftAnchor="8.0" />
+                            </children>
+                        </AnchorPane>
+                        <Line endY="-122.0" layoutX="24.0" layoutY="143.0" startY="317.0" />
+                    </children></AnchorPane>
+                <ListView fx:id="sundayList" fixedCellSize="-2.0" layoutX="48.0" prefHeight="481.0" prefWidth="123.0" />
+                <ListView layoutX="171.0" prefHeight="481.0" prefWidth="123.0" />
+                <ListView layoutX="294.0" prefHeight="481.0" prefWidth="123.0" />
+                <ListView layoutX="417.0" prefHeight="481.0" prefWidth="123.0" />
+                <ListView layoutX="540.0" prefHeight="481.0" prefWidth="123.0" />
+                <ListView layoutX="663.0" prefHeight="481.0" prefWidth="123.0" />
+                <ListView layoutX="786.0" prefHeight="481.0" prefWidth="123.0" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="257.0" layoutY="572.0" prefHeight="120.0" prefWidth="466.0">
+            <children>
+                <Button layoutX="52.0" layoutY="48.0" mnemonicParsing="false" onAction="#switchToCreateScene" prefHeight="21.0" prefWidth="55.0" text="Create" />
+                <Button layoutX="206.0" layoutY="48.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="94.0" layoutY="18.0" prefHeight="35.0" prefWidth="860.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="123.0" style="-fx-border-color: lightGrey;" text="Sunday" textAlignment="CENTER">
+                    <font>
+                        <Font name="Avenir Book" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" prefHeight="35.0" prefWidth="123.0" style="-fx-border-color: lightGrey;" text="Monday" textAlignment="CENTER">
+                    <font>
+                        <Font name="Avenir Book" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="246.0" prefHeight="35.0" prefWidth="123.0" style="-fx-border-color: lightGrey;" text="Tuesday" textAlignment="CENTER">
+                    <font>
+                        <Font name="Avenir Book" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="369.0" prefHeight="35.0" prefWidth="123.0" style="-fx-border-color: lightGrey;" text="Wednesday" textAlignment="CENTER">
+                    <font>
+                        <Font name="Avenir Book" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="492.0" prefHeight="35.0" prefWidth="123.0" style="-fx-border-color: lightGrey;" text="Thursday" textAlignment="CENTER">
+                    <font>
+                        <Font name="Avenir Book" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="615.0" prefHeight="35.0" prefWidth="123.0" style="-fx-border-color: lightGrey;" text="Friday" textAlignment="CENTER">
+                    <font>
+                        <Font name="Avenir Book" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="738.0" prefHeight="35.0" prefWidth="123.0" style="-fx-border-color: lightGrey;" text="Saturday" textAlignment="CENTER">
+                    <font>
+                        <Font name="Avenir Book" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
