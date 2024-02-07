@@ -4,26 +4,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.tasktracker.SceneController">
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tasktracker.SceneController">
     <children>
         <AnchorPane layoutX="46.0" layoutY="53.0" prefHeight="464.0" prefWidth="909.0">
             <children>
                 <AnchorPane prefHeight="477.0" prefWidth="48.0" style="-fx-background-color: white; -fx-border-radius: 50%;">
                     <children>
-                        <AnchorPane prefHeight="20.0" prefWidth="48.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 6;">
-                            <children>
-                                <Label layoutX="8.0" layoutY="2.0" text="12 AM" AnchorPane.leftAnchor="8.0" />
-                            </children>
-                        </AnchorPane>
-                        <AnchorPane layoutY="460.0" prefHeight="20.0" prefWidth="48.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 6;">
-                            <children>
-                                <Label layoutX="9.0" layoutY="2.0" text="11 PM" AnchorPane.leftAnchor="8.0" />
-                            </children>
-                        </AnchorPane>
-                        <Line endY="-122.0" layoutX="24.0" layoutY="143.0" startY="317.0" />
+                        <Line endY="-94.0" layoutX="24.0" layoutY="143.0" startY="284.0" />
+                  <Circle fill="#ffcb30" layoutX="24.0" layoutY="22.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="#bfbfbc" layoutX="24.0" layoutY="452.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
                     </children></AnchorPane>
                 <ListView fx:id="sundayList" fixedCellSize="-2.0" layoutX="48.0" prefHeight="481.0" prefWidth="123.0" />
                 <ListView layoutX="171.0" prefHeight="481.0" prefWidth="123.0" />

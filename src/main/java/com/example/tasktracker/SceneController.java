@@ -32,16 +32,16 @@ public class SceneController implements Initializable {
     @FXML
     private Label errorLabel;
 
-    private final ArrayList<Integer> hours = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ));
+    private final ArrayList<Integer> HOURS = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ));
     private final String[] AMPM ={"PM", "AM"};
-    private static TestModel tm = new TestModel();  // static allows data to be modified by different Scenes and Stages
+    private static Day sunday = new Day("Sunday");  // static allows data to be modified by different Scenes and Stages
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // initializes ChoiceBoxes and Spinners
         try {
-            startTime.getItems().addAll(hours);
-            endTime.getItems().addAll(hours);
+            startTime.getItems().addAll(HOURS);
+            endTime.getItems().addAll(HOURS);
             SpinnerValueFactory<String> startValueFactory =
                     new SpinnerValueFactory.ListSpinnerValueFactory<>(FXCollections.observableArrayList(AMPM));
             SpinnerValueFactory<String> endValueFactory =
@@ -73,14 +73,14 @@ public class SceneController implements Initializable {
             int lastHour = endTime.getValue();
             String startAMPM = startTimeAMPM.getValue();
             String endAMPM = endTimeAMPM.getValue();
-            if(validateTimes(name, firstHour, lastHour, startAMPM, endAMPM)){
-                tm.stuff.add(new SocialEvent(name, firstHour, lastHour, startAMPM, endAMPM));
-                tm.stuff.sort(new EventComparator());
+            if(validateInputs(name, firstHour, lastHour, startAMPM, endAMPM)){
+                sunday.getEvents().add(new SocialEvent(name, firstHour, lastHour, startAMPM, endAMPM));
+                sunday.getEvents().sort(new EventComparator());
                 eventName.setText("");
                 startTime.setValue(null);
                 endTime.setValue(null);
             }
-            System.out.println(tm.stuff);
+            System.out.println(sunday.getEvents());
         }
         catch(NullPointerException e){
             errorLabel.setText("Please fill out all of the values.");
@@ -90,7 +90,7 @@ public class SceneController implements Initializable {
         }
     }
 
-    public boolean validateTimes(String name, int firstHour, int lastHour, String startAMPM, String endAMPM){
+    public boolean validateInputs(String name, int firstHour, int lastHour, String startAMPM, String endAMPM){
         // adjust time by 12 hours if PM is selected
         if (startAMPM.equals("PM")){
             firstHour += 12;
@@ -98,11 +98,15 @@ public class SceneController implements Initializable {
         if (endAMPM.equals("PM")){
             lastHour += 12;
         }
+        if (firstHour != 12 && lastHour == 12){
+            errorLabel.setText("Events can't be scheduled past 11 pm.");
+            return false;
+        }
         if (firstHour > lastHour) {
             errorLabel.setText("An event can't end before it starts!");
             return false;
         }
-        if (name.equals("")){
+        if (name.isEmpty()){
             errorLabel.setText("Please fill out all of the values.");
             return false;
         }
@@ -116,8 +120,8 @@ public class SceneController implements Initializable {
     public void refresh(){
         try {
             sundayList.getItems().clear();
-            sundayList.getItems().addAll(tm.stuff);
-            System.out.println(tm.stuff.toString());
+            sundayList.getItems().addAll(sunday.getEvents());
+            System.out.println(sunday.getEvents().toString());
         }
         catch (Exception e){
             System.out.println(e);
