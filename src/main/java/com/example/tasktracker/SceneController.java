@@ -56,6 +56,8 @@ public class SceneController implements Initializable {
         }
     }
 
+	//daria's Git branch check
+
     public void switchToCreateScene() throws IOException{
         Parent createRoot = FXMLLoader.load(getClass().getResource("Create.fxml"));
         Stage createStage = new Stage();
