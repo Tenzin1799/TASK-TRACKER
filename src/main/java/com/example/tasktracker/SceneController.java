@@ -92,12 +92,19 @@ public class SceneController implements Initializable {
 
     public boolean validateInputs(String name, int firstHour, int lastHour, String startAMPM, String endAMPM){
         // adjust time by 12 hours if PM is selected
-        if (startAMPM.equals("PM")){
-            firstHour += 12;
+        if (startAMPM.equals("PM") && firstHour != 12){//if the starting time is during 'PM', but not 12pm (this should allow for events lasting from 12 pm to #pm)
+            firstHour += 12; //add 12 to the starting time (think military/24 time)
         }
-        if (endAMPM.equals("PM")){
-            lastHour += 12;
+		if(startAMPM.equals("AM") && firstHour == 12) { //if the start time is 12 AM
+			firstHour = 0; //make it 0 o'clock. This should allow for an event to last from 12am to #am
+		}
+		
+        if (endAMPM.equals("PM") && lastHour != 12){ //if it is # PM (excluding 12),
+            lastHour += 12; //add 12 to the starting time (think military/24 time)
         }
+		if (endAMPM.equals("AM") && lastHour == 12) {//if the endtime is 12 am
+			lastHour = 0; //make lastHour 0 o'clock
+		}
         if (firstHour != 12 && lastHour == 12){
             errorLabel.setText("Events can't be scheduled past 11 pm.");
             return false;
