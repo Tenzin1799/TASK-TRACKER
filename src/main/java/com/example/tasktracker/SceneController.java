@@ -92,6 +92,9 @@ public class SceneController implements Initializable {
         }
     }
 
+//Austin was here B]
+
+
     public boolean validateInputs(String name, int firstHour, int lastHour, String startAMPM, String endAMPM){
         // adjust time by 12 hours if PM is selected
         if (startAMPM.equals("PM") && firstHour != 12){//if the starting time is during 'PM', but not 12pm (this should allow for events lasting from 12 pm to #pm)
