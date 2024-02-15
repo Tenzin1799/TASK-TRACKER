@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="98cd9a1e-ffbc-4684-b792-f2195af6f3fd" name="Changes" comment="Initial Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/TestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/Day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/Main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +37,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+    &quot;git-widget-placeholder&quot;: &quot;tenzin-branch&quot;
   }
 }</component>
   <component name="RecentsManager">
