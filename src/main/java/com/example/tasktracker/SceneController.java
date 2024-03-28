@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
+///// WILL BE POTENTIALLY SCRAPPED
 
 public class SceneController implements Initializable {
 

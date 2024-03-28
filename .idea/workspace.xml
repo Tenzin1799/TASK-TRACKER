@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98cd9a1e-ffbc-4684-b792-f2195af6f3fd" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Database/DatabaseManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/View.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/Day.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/SceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/WeekController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/WeekController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/WeekView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/WeekView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -35,13 +45,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Tools/postgresql-42.7.2.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "tenzin-branch"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/example/tasktracker" />
@@ -70,7 +78,7 @@
     </configuration>
     <configuration name="com.example.tasktracker.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.tasktracker.Main" />
-      <module name="TASK-TRACKER" />
+      <module name="TaskTracker" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.tasktracker.*" />
@@ -114,7 +122,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="tenzin-branch" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
