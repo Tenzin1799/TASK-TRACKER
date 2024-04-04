@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cd9a1e-ffbc-4684-b792-f2195af6f3fd" name="Changes" comment="Added test singleton class that allowed for Create.fxml to pass data to WeekView.fxml.">
+    <list default="true" id="98cd9a1e-ffbc-4684-b792-f2195af6f3fd" name="Changes" comment="GUI changed so can pick color, day, and times. Functionality not yet implemented.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_27_24,_7_21_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_27_24,_7_22_PM_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/CreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/CreateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/TestDataSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/TestDataSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/WeekController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/WeekController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/WeekView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/WeekView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/Create.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/Create.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/WeekView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/WeekView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

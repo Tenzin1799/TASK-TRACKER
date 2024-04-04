@@ -4,6 +4,7 @@ import javafx.scene.control.Button;
 
 public final class TestDataSingleton {
     private Button button;
+    private String day;
     private final static TestDataSingleton INSTANCE = new TestDataSingleton();
 
     private TestDataSingleton() {}
@@ -20,6 +21,14 @@ public final class TestDataSingleton {
 
     public Button getButton() {
         return this.button;
+    }
+
+    public void setDay(String day){
+        this.day = day;
+    }
+
+    public String getDay(){
+        return this.day;
     }
 
 
