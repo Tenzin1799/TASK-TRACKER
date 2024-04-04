@@ -51,11 +51,16 @@ public class WeekController implements Initializable {
         createStage.setResizable(false);
         createStage.showAndWait();
 
-        TestDataSingleton holder = TestDataSingleton.getInstance();
-        Button button = holder.getButton();
+        // this part should probably go to a different function
+        TestDataSingleton singleton = TestDataSingleton.getInstance();
+        Button button = singleton.getButton();
         System.out.println(button.getText());
         button.setMaxSize(week.getHeight(), week.getWidth());
         view.testAddButton(week, button);
+    }
+
+    public void addButton(){
+
     }
 
 
