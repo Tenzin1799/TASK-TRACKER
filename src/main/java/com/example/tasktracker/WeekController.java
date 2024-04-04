@@ -16,20 +16,21 @@ import java.util.ResourceBundle;
 
 public class WeekController implements Initializable {
     @FXML
-    GridPane week;
+    private GridPane week;
 
-    ObservableList<Day> daysList;
-    WeekView view = new WeekView();
+
+    private ObservableList<Day> daysList;
+    private WeekView view = new WeekView();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Day sunday = new Day("Sunday");
-        Day monday = new Day("Monday");
-        Day tuesday = new Day("Tuesday");
-        Day wednesday = new Day("Wednesday");
-        Day thursday = new Day("Thursday");
-        Day friday = new Day("Friday");
-        Day saturday = new Day("Saturday");
+//        Day sunday = new Day("Sunday");
+//        Day monday = new Day("Monday");
+//        Day tuesday = new Day("Tuesday");
+//        Day wednesday = new Day("Wednesday");
+//        Day thursday = new Day("Thursday");
+//        Day friday = new Day("Friday");
+//        Day saturday = new Day("Saturday");
     }
 
 

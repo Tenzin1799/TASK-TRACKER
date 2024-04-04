@@ -12,9 +12,9 @@ public final class TestDataSingleton {
         return INSTANCE;
     }
 
-    public void setButton(Button button) {
+    public void setButton(Button button, String color) {
         // CHANGE THIS TO ALLOW USER TO PICK A COLOR (ie: dropdown list of colors
-        button.setStyle("-fx-background-color: green;");
+        button.setStyle("-fx-background-color: " + color + ";");
         this.button = button;
     }
 
