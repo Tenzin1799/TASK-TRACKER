@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -16,8 +15,6 @@ import java.util.ResourceBundle;
 
 
 public class CreateController implements Initializable {
-    @FXML
-    private AnchorPane create;
     @FXML
     private TextField eventName;
     @FXML
@@ -73,17 +70,16 @@ public class CreateController implements Initializable {
             String startAMPM = startTimeAMPM.getValue();
             String endAMPM = endTimeAMPM.getValue();
 
-            Button button = new Button();
-            button.setText(eventName.getText());
-            button.setId(eventName.getText());
-            TestDataSingleton singleton = TestDataSingleton.getInstance();;
-            singleton.setButton(button, color);
-            singleton.setDay(dayPicker.getValue());
+//            Button button = new Button();
+//            button.setText(eventName.getText());
+//            button.setId(eventName.getText());
+
+//            singleton.setButton(button, color);
 
             if(validateInputs(day, name, color, firstHour, lastHour, startAMPM, endAMPM)){
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
-                 stage.close();
+                stage.close();
             }
         } catch(NullPointerException e){
             errorLabel.setText("Please fill out all of the values.");
@@ -128,9 +124,19 @@ public class CreateController implements Initializable {
             errorLabel.setText("Please fill out all of the values.");
             return false;
         }
-
-        errorLabel.setText("Event has been set. Head back and refresh!");
+        System.out.println("Event set.");
+        setData(day, color, name, firstHour, lastHour);
         return true;
+    }
+
+    public void setData(String day, String color, String name, int firstHour, int lastHour){
+        TestDataSingleton singleton = TestDataSingleton.getInstance();;
+        singleton.setDay(day);
+        singleton.setColor(color);
+        singleton.setEventName(name);
+        // increment each by one to adjust for calendar grid
+        singleton.setStartHour(firstHour+1);
+        singleton.setLastHour(lastHour+1);
     }
 
 }

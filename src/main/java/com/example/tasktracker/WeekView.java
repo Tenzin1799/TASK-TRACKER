@@ -4,10 +4,11 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
 public class WeekView {
+    private final int SINGLE_DAY = 1;
 
-    public void testAddButton(GridPane week, Button button){
-        // ALTER THIS TO ACCOUNT FOR TIME
+    public void addEventToCalendar(GridPane week, Button button, int dayCol, int startTime, int duration){
        //.add(button, colIndex, rowIndex, colSpan, rowSpan)
-        week.add(button,1, 1);
+        week.add(button, dayCol, startTime, SINGLE_DAY, duration);
     }
+
 }
