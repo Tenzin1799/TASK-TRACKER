@@ -21,6 +21,7 @@ public class WeekController implements Initializable {
 
     private ObservableList<Day> daysList;
     private WeekView view = new WeekView();
+    final private int OFFSET = 1;   // offset duration of events by 1 when start and end are subtracted to account events that are only 1 hour.
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -33,16 +34,6 @@ public class WeekController implements Initializable {
 //        Day saturday = new Day("Saturday");
     }
 
-
-//    public void addButton(){
-//        Button button = new Button();
-//        button.setText("Test");
-//        button.setId("Test");
-//        button.setMaxSize(week.getHeight(), week.getWidth());
-//        view.testAddButton(week, button);
-//    }
-
-
     public void openCreateView() throws IOException {
         Parent createRoot = FXMLLoader.load(getClass().getResource("Create.fxml"));
         Stage createStage = new Stage();
@@ -50,19 +41,51 @@ public class WeekController implements Initializable {
         createStage.setScene(createScene);
         createStage.setResizable(false);
         createStage.showAndWait();
+        try {
+            addEvent();
+        } catch(Exception e){
+            System.out.println(e);
+        }
+    }
 
-        // this part should probably go to a different function
+    public void addEvent(){
         TestDataSingleton singleton = TestDataSingleton.getInstance();
-        Button button = singleton.getButton();
+        Button button = new Button();
+        button.setText(singleton.getEventName());
+        button.setId(singleton.getEventName());
+        String color = singleton.getColor();
+        int day = getDayNum(singleton.getDay());
+        int startTime = singleton.getStartHour();
+        int endTime = singleton.getLastHour();
+        int duration = (endTime - startTime) + OFFSET;
+        button.setStyle("-fx-background-color: " + color + ";");
         System.out.println(button.getText());
         button.setMaxSize(week.getHeight(), week.getWidth());
-        view.testAddButton(week, button);
+        view.addEventToCalendar(week, button, day, startTime, duration);
     }
 
-    public void addButton(){
-
+    public int getDayNum(String day){
+        if(day == "Sunday"){
+            return 1;
+        }
+        else if (day == "Monday"){
+            return 2;
+        }
+        else if (day == "Tuesday"){
+            return 3;
+        }
+        else if (day == "Wednesday"){
+            return 4;
+        }
+        else if (day == "Thursday"){
+            return 5;
+        }
+        else if (day == "Friday"){
+            return 6;
+        }
+        else
+            return 7;
     }
-
 
 }
 
