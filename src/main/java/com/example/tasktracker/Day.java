@@ -12,9 +12,12 @@ public class Day{
         this.name = name;
     }
 
+
     public ArrayList<Event> getEvents(){
         return events;
     }
+
+
     public String getName(){
         return name;
     }

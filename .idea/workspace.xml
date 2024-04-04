@@ -23,24 +23,44 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Tenzin1799&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="915adeba-58e5-4afa-bf6e-189809b33956" />
+        <option name="url" value="https://github.com/Tenzin1799/TASK-TRACKER.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2c3PpqIW6kdbJSEzUBr2zzhs64u" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Tools/postgresql-42.7.2.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;tenzin-branch&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/example/tasktracker" />
@@ -69,7 +89,7 @@
     </configuration>
     <configuration name="com.example.tasktracker.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.tasktracker.Main" />
-      <module name="TASK-TRACKER" />
+      <module name="TaskTracker" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.tasktracker.*" />
@@ -85,6 +105,8 @@
         <item itemvalue="Application.com.example.tasktracker.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.com.example.tasktracker.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -105,7 +127,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707339091108</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added test singleton class that allowed for Create.fxml to pass data to WeekView.fxml.">
+      <option name="closed" value="true" />
+      <created>1712186764374</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712186764374</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added test singleton class that allowed for Create.fxml to pass data to WeekView.fxml.">
+      <option name="closed" value="true" />
+      <created>1712186842751</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712186842751</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +159,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Added test singleton class that allowed for Create.fxml to pass data to WeekView.fxml." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test singleton class that allowed for Create.fxml to pass data to WeekView.fxml." />
   </component>
 </project>
