@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98cd9a1e-ffbc-4684-b792-f2195af6f3fd" name="Changes" comment="Initial Commit">
+    <list default="true" id="98cd9a1e-ffbc-4684-b792-f2195af6f3fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/Edit.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/test.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/CreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/CreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/TestDataSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/TestDataSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/WeekController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tasktracker/WeekController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/View.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/View.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/WeekView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tasktracker/WeekView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -143,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712186842751</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="whattt">
+      <option name="closed" value="true" />
+      <created>1712194409515</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712194409515</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +174,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Added test singleton class that allowed for Create.fxml to pass data to WeekView.fxml." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test singleton class that allowed for Create.fxml to pass data to WeekView.fxml." />
+    <MESSAGE value="Implemented functionality of time, color, and day when added to calendar." />
+    <MESSAGE value="whattt" />
+    <option name="LAST_COMMIT_MESSAGE" value="whattt" />
   </component>
 </project>

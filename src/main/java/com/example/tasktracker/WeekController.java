@@ -1,6 +1,7 @@
 package com.example.tasktracker;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -39,7 +40,8 @@ public class WeekController implements Initializable {
         Stage createStage = new Stage();
         Scene createScene = new Scene(createRoot);
         createStage.setScene(createScene);
-        createStage.setResizable(false);
+        createStage.setResizable(true);
+        createStage.setFullScreen(false);
         createStage.showAndWait();
         try {
             addEvent();
@@ -58,10 +60,52 @@ public class WeekController implements Initializable {
         int startTime = singleton.getStartHour();
         int endTime = singleton.getLastHour();
         int duration = (endTime - startTime) + OFFSET;
-        button.setStyle("-fx-background-color: " + color + ";");
+        setButtonColor(button, color);
+        setButtonFunctionality(button);
         System.out.println(button.getText());
         button.setMaxSize(week.getHeight(), week.getWidth());
         view.addEventToCalendar(week, button, day, startTime, duration);
+    }
+
+    // Changes color to specified hex-values to avoid using the ugly default colors.
+    public void setButtonColor(Button button, String color){
+        switch(color){
+            case "Red":
+                color = "#ff3333";
+                break;
+            case "Orange":
+                color = "#ffaa3b";
+                break;
+            case "Yellow":
+                color = "#ffea00";
+                break;
+            case "Green":
+                color = "#16fa66";
+                break;
+            case "Blue":
+                color = "#11abed";
+                break;
+        }
+        button.setStyle("-fx-background-color: " + color + ";");
+    }
+
+    // Gives each event button that is created functionality so that they can open up an edit
+    // screen with its particular data attached.
+    public void setButtonFunctionality(Button button){
+        button.setOnAction((ActionEvent e) -> {
+            Parent createRoot = null;
+            try {
+                createRoot = FXMLLoader.load(getClass().getResource("Edit.fxml"));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            Stage createStage = new Stage();
+            Scene createScene = new Scene(createRoot);
+            createStage.setScene(createScene);
+            createStage.setResizable(true);
+            createStage.setFullScreen(false);
+            createStage.showAndWait();
+        });
     }
 
     public int getDayNum(String day){

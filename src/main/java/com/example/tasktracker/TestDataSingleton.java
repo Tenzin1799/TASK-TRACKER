@@ -1,9 +1,6 @@
 package com.example.tasktracker;
 
-import javafx.scene.control.Button;
-
 public final class TestDataSingleton {
-    private Button button;
     private String day;
     private String eventName;
     private String color;
@@ -39,16 +36,6 @@ public final class TestDataSingleton {
 
     public void setLastHour(int lastHour) {
         this.lastHour = lastHour;
-    }
-
-    public void setButton(Button button, String color) {
-        // CHANGE THIS TO ALLOW USER TO PICK A COLOR (ie: dropdown list of colors
-        button.setStyle("-fx-background-color: " + color + ";");
-        this.button = button;
-    }
-
-    public Button getButton() {
-        return this.button;
     }
 
     public void setDay(String day){
