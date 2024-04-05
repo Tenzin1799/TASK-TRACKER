@@ -69,13 +69,6 @@ public class CreateController implements Initializable {
             int lastHour = endTime.getValue();
             String startAMPM = startTimeAMPM.getValue();
             String endAMPM = endTimeAMPM.getValue();
-
-//            Button button = new Button();
-//            button.setText(eventName.getText());
-//            button.setId(eventName.getText());
-
-//            singleton.setButton(button, color);
-
             if(validateInputs(day, name, color, firstHour, lastHour, startAMPM, endAMPM)){
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
