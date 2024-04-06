@@ -11,8 +11,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DatabaseManager
+public final class DatabaseManager
 {
+    boolean isConnected = false;
+
+    public final static DatabaseManager INSTANCE = new DatabaseManager();
+
+    private DatabaseManager() {}
+
+    public static DatabaseManager getInstance() {return INSTANCE;}
+
     public Connection connectToDb() {
         final String API_KEY = "jdbc:postgresql://ep-raspy-dream-a5akhty5.us-east-2.aws.neon.tech/TraskTrackerDB?user=TraskTrackerDB_owner&password=lCiLWQfpz74r&sslmode=require";
         Connection connection = null;
@@ -21,7 +29,9 @@ public class DatabaseManager
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(API_KEY);
             if(connection != null) {
-                System.out.println("Connected to Database");            }
+                System.out.println("Connected to Database");
+                isConnected = true;
+            }
             else {
                 System.out.println("Failed to connect");
             }
@@ -47,15 +57,30 @@ public class DatabaseManager
         }
     }
 
-    public void InsertEvent(int eventID, String eventName, int startTime, int endTime) {
+    public void InsertEvent(int eventDay, String eventName, int startTime, int endTime) {
         Statement statement;
         try
         {
             String query = String.format("insert into tasks(eventday, eventname, starttime, endtime) values(%d,'%s',%d,%d);"
-                    , eventID, eventName, startTime, endTime);
+                    , eventDay, eventName, startTime, endTime);
             statement = connectToDb().createStatement();
             statement.executeUpdate(query);
             System.out.println("Row inserted");
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void DeleteEvent(int eventDay, String eventName, int startTime, int endTime) {
+        Statement statement;
+        try {
+            String query = "delete from events where eventday ="+eventDay+
+                    " and eventName = '"+eventName+"' and starttime ="+startTime +
+                    " and endtime ="+endTime ;
+            statement = connectToDb().createStatement();
+            statement.executeUpdate(query);
+            System.out.println("Removed row");
         }
         catch (Exception e) {
             System.out.println(e);
@@ -109,5 +134,9 @@ public class DatabaseManager
         catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public boolean isConnected() {
+        return isConnected;
     }
 }
