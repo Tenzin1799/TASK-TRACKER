@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="383.0" prefWidth="432.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.tasktracker.SceneController">
+<AnchorPane prefHeight="383.0" prefWidth="432.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tasktracker.CreateController">
     <children>
-        <AnchorPane prefHeight="281.0" prefWidth="434.0">
+        <AnchorPane fx:id="create" prefHeight="281.0" prefWidth="434.0">
             <children>
                 <AnchorPane layoutX="6.0" layoutY="50.0" prefHeight="54.0" prefWidth="376.0" style="-fx-background-color: white;">
                     <children>
@@ -57,11 +57,31 @@
                         <Cursor fx:constant="DEFAULT" />
                     </cursor>
                 </AnchorPane>
+            <AnchorPane layoutX="22.0" layoutY="212.0" prefHeight="54.0" prefWidth="195.0" style="-fx-background-color: White;">
+               <children>
+                  <Label layoutX="43.0" layoutY="15.0" prefHeight="23.0" prefWidth="48.0" text="Day:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="dayPicker" layoutX="90.0" layoutY="15.0" prefHeight="25.0" prefWidth="90.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="210.0" layoutY="212.0" prefHeight="54.0" prefWidth="195.0" style="-fx-background-color: White;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="53.0" text="Color:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="colorPicker" layoutX="78.0" layoutY="14.0" prefHeight="25.0" prefWidth="90.0" />
+               </children>
+            </AnchorPane>
             </children>
         </AnchorPane>
         <AnchorPane layoutX="172.0" layoutY="287.0" prefHeight="54.0" prefWidth="90.0">
             <children>
-                <Button fx:id="addButton" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#addItem" prefHeight="28.0" prefWidth="60.0" text="Add">
+                <Button fx:id="addButton" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#addButton" prefHeight="28.0" prefWidth="60.0" text="Add">
                     <font>
                         <Font size="14.0" />
                     </font>

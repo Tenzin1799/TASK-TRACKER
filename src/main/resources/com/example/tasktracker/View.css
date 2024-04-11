@@ -1,0 +1,19 @@
+#Test{
+    -fx-background-color: #0390fc;
+}
+
+#Test:pressed{
+    -fx-background-color: #005ba1;
+}
+
+button:pressed{
+    -fx-background-color: #005ba1;
+}
+
+#Layer{
+    -fx-background-color: #d738ff;
+}
+
+#Layer:pressed{
+    -fx-background-color: #9f28bd;
+}

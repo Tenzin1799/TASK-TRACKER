@@ -3,6 +3,8 @@ package com.example.tasktracker;
 import java.util.ArrayList;
 
 public class Day{
+    // Day comment
+    // Comment 2
     private String name;
     private ArrayList<Event> events = new ArrayList<>();
 
@@ -10,9 +12,12 @@ public class Day{
         this.name = name;
     }
 
+
     public ArrayList<Event> getEvents(){
         return events;
     }
+
+
     public String getName(){
         return name;
     }
