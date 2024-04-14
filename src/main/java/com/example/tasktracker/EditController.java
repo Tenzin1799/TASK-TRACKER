@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
+import com.example.tasktracker.WeekController; //*
+
 
 public class EditController implements Initializable {
     @FXML
@@ -31,6 +33,10 @@ public class EditController implements Initializable {
     private ComboBox<String> dayPicker;
     @FXML
     private Label errorLabel;
+	
+	
+
+
 
     private final ArrayList<Integer> HOURS = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ));
     private final ArrayList<String> COLORS = new ArrayList<>(Arrays.asList("Red", "Orange", "Yellow", "Green", "Blue", "Cyan"));
@@ -73,6 +79,7 @@ public class EditController implements Initializable {
             if(validateInputs(day, name, color, firstHour, lastHour, startAMPM, endAMPM)){
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
+				WeekController.UpdateButtonClicked = true;
                 stage.close();
             }
         } catch(NullPointerException e){
@@ -82,10 +89,19 @@ public class EditController implements Initializable {
 	
 	public void deleteButton (ActionEvent event) {
 		//delete the button from memory
+		WeekController.DeleteButtonClicked = true;
+		Node node = (Node) event.getSource();
+		Stage stage = (Stage) node.getScene().getWindow();
+		stage.close();
+
 	}
 	
 	public void markascompleteButton (ActionEvent event) {
-            //change button color to grey, and strikethrough the buttons text
+        //change button color to grey, and strikethrough the buttons text
+		WeekController.CompleteButtonClicked = true;
+		Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+		stage.close();
 	}
 
     public boolean validateInputs(String day, String name, String color, int firstHour, int lastHour, String startAMPM, String endAMPM){
