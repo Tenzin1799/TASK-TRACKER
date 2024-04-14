@@ -15,9 +15,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+
 public class WeekController implements Initializable {
     @FXML
     private GridPane week;
+	
+	
+	public static boolean UpdateButtonClicked = false;//set to false, applies to each time the pop up window gets opened.
+	public static boolean DeleteButtonClicked = false;
+	public static boolean CompleteButtonClicked = false;
 
 
     private ObservableList<Day> daysList;
@@ -85,6 +92,8 @@ public class WeekController implements Initializable {
             case "Blue":
                 color = "#11abed";
                 break;
+			case "Grey":	
+				color = "#A4A4A4"; 	
         }
         button.setStyle("-fx-background-color: " + color + ";");
     }
@@ -92,19 +101,47 @@ public class WeekController implements Initializable {
     // Gives each event button that is created functionality so that they can open up an edit
     // screen with its particular data attached.
     public void setButtonFunctionality(Button button){
-        button.setOnAction((ActionEvent e) -> {
-            Parent createRoot = null;
+        button.setOnAction((ActionEvent e) -> {	//when the button is clicked, the following will occur:
+			Button userButton = (Button) e.getSource(); 
+            Parent editRoot = null;
             try {
-                createRoot = FXMLLoader.load(getClass().getResource("Edit.fxml"));
+                editRoot = FXMLLoader.load(getClass().getResource("Edit.fxml"));
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-            Stage createStage = new Stage();
-            Scene createScene = new Scene(createRoot);
-            createStage.setScene(createScene);
-            createStage.setResizable(true);
-            createStage.setFullScreen(false);
-            createStage.showAndWait();
+            Stage editStage = new Stage();
+            Scene editScene = new Scene(editRoot);
+            editStage.setScene(editScene);
+            editStage.setResizable(true);
+            editStage.setFullScreen(false);
+			System.out.println(userButton);
+
+            editStage.showAndWait();
+			if (UpdateButtonClicked == true) {
+
+				week.getChildren().remove(userButton);
+				try {
+					addEvent();	
+				} catch(Exception a){	
+					System.out.println(a);
+				}
+				UpdateButtonClicked = false;
+			}
+			if (DeleteButtonClicked == true) { 
+
+				//delete the button associated with the variable userButton
+				week.getChildren().remove(userButton); 
+				DeleteButtonClicked = false;
+			}
+			
+			if (CompleteButtonClicked == true) { 
+
+				//call the setButtonColor and set it to grey or something.
+				setButtonColor(userButton, "Grey");
+				CompleteButtonClicked = false;
+			}  
+			
+
         });
     }
 
