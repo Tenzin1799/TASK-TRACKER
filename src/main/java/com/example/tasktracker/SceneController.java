@@ -91,7 +91,7 @@ public class SceneController implements Initializable {
         }
     }
 
-//Austin was here B]
+
 
 
     public boolean validateInputs(String name, int firstHour, int lastHour, String startAMPM, String endAMPM){
