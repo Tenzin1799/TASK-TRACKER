@@ -1,48 +1,60 @@
 package com.example.tasktracker;
 
-import java.util.Comparator;
 
-public abstract class Event implements Task {
+public class Event {
+    private String day;
     private String name;
-    private int firstHour;
-    private int lastHour;
-    private String startAMPM;
-    private String endAMPM;
+    private int startTime;
+    private int endTime;
+    private String color;
+    private boolean isCompleted;
 
-    public Event(String name, int firstHour, int lastHour, String startAMPM, String endAMPM){
+    public Event(String day, String name, String color, int firstHour, int lastHour, boolean isCompleted){
+        this.day = day;
         this.name = name;
-        this.firstHour = firstHour;
-        this.lastHour = lastHour;
-        this.startAMPM = startAMPM;
-        this.endAMPM = endAMPM;
+        this.color = color;
+        this.startTime = firstHour;
+        this.endTime = lastHour;
+        this.isCompleted = isCompleted;
     }
 
-    @Override
-    public String toString() {
-        return name + " (" + firstHour + startAMPM + "-" + lastHour + endAMPM + ")";
+    public String getDay() {
+        return day;
     }
-}
 
-// Comparator class to use Colelctions.sort()
-class EventComparator implements Comparator<Event> {
-    @Override
-    public int compare(Event n1, Event n2){
-        int n1FirstHour = n1.getFirstHour();
-        int n2FirstHour = n2.getFirstHour();
-        if (n1.getStartAMPM().equals("PM")){
-            n1FirstHour += 12;
-        }
-        if (n2.getStartAMPM().equals("PM")){
-            n2FirstHour += 12;
-        }
-        if (n1FirstHour == n2FirstHour){
-            return 0;
-        }
-        if (n1FirstHour > n2FirstHour){
-            return 1;
-        }
-        else {
-            return -1;
-        }
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(int firstHour) {
+        this.startTime = firstHour;
+    }
+
+    public int getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(int lastHour) {
+        this.endTime = lastHour;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }

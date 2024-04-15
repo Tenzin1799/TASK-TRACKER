@@ -1,5 +1,6 @@
 package com.example.tasktracker;
 
+import Database.DatabaseManager;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -92,6 +93,7 @@ public class EditController implements Initializable {
 		WeekController.DeleteButtonClicked = true;
 		Node node = (Node) event.getSource();
 		Stage stage = (Stage) node.getScene().getWindow();
+
 		stage.close();
 
 	}
@@ -147,12 +149,15 @@ public class EditController implements Initializable {
     }
 
     public void setData(String day, String color, String name, int firstHour, int lastHour){
-        TestDataSingleton singleton = TestDataSingleton.getInstance();;
+        TestDataSingleton singleton = TestDataSingleton.getInstance();
+        DatabaseManager databaseManager = DatabaseManager.getInstance();
+
         singleton.setDay(day);
         singleton.setColor(color);
         singleton.setEventName(name);
         // increment each by one to adjust for calendar grid
         singleton.setStartHour(firstHour+1);
         singleton.setLastHour(lastHour+1);
+
     }
 }

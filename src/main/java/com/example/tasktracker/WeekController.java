@@ -1,5 +1,6 @@
 package com.example.tasktracker;
 
+import Database.DatabaseManager;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
@@ -26,6 +28,7 @@ public class WeekController implements Initializable {
 	public static boolean DeleteButtonClicked = false;
 	public static boolean CompleteButtonClicked = false;
 
+    private ArrayList<Event> eventList = DatabaseManager.getInstance().GetEventList();
 
     private ObservableList<Day> daysList;
     private WeekView view = new WeekView();
@@ -33,13 +36,7 @@ public class WeekController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        Day sunday = new Day("Sunday");
-//        Day monday = new Day("Monday");
-//        Day tuesday = new Day("Tuesday");
-//        Day wednesday = new Day("Wednesday");
-//        Day thursday = new Day("Thursday");
-//        Day friday = new Day("Friday");
-//        Day saturday = new Day("Saturday");
+        loadEvents();
     }
 
     public void openCreateView() throws IOException {
@@ -51,7 +48,7 @@ public class WeekController implements Initializable {
         createStage.setFullScreen(false);
         createStage.showAndWait();
         try {
-            addEvent();
+           addEvent();
         } catch(Exception e){
             System.out.println(e);
         }
@@ -72,6 +69,25 @@ public class WeekController implements Initializable {
         System.out.println(button.getText());
         button.setMaxSize(week.getHeight(), week.getWidth());
         view.addEventToCalendar(week, button, day, startTime, duration);
+    }
+
+    // Should load events from the database into GUI
+    public void loadEvents() {
+        for (Event event : eventList)
+        {
+            Button button = new Button();
+            button.setText(event.getName());
+            button.setId(event.getName());
+            String color = event.getColor();
+            int day = getDayNum(event.getDay());
+            int startTime = event.getStartTime()+1;
+            int endTime =  event.getEndTime()+1;
+            int duration = (endTime - startTime) + OFFSET;
+            setButtonColor(button, color);
+            setButtonFunctionality(button);
+            button.setMaxSize(week.getHeight(), week.getWidth());
+            view.addEventToCalendar(week, button, day, startTime, duration);
+        }
     }
 
     // Changes color to specified hex-values to avoid using the ugly default colors.
@@ -121,7 +137,7 @@ public class WeekController implements Initializable {
 
 				week.getChildren().remove(userButton);
 				try {
-					addEvent();	
+					addEvent();
 				} catch(Exception a){	
 					System.out.println(a);
 				}

@@ -1,5 +1,6 @@
 package com.example.tasktracker;
 
+import Database.DatabaseManager;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -124,12 +125,17 @@ public class CreateController implements Initializable {
 
     public void setData(String day, String color, String name, int firstHour, int lastHour){
         TestDataSingleton singleton = TestDataSingleton.getInstance();;
+        DatabaseManager databaseManager = DatabaseManager.getInstance();
+
         singleton.setDay(day);
         singleton.setColor(color);
         singleton.setEventName(name);
         // increment each by one to adjust for calendar grid
         singleton.setStartHour(firstHour+1);
         singleton.setLastHour(lastHour+1);
+
+        // Save to the database
+        databaseManager.InsertEvent(day, name, color, firstHour, lastHour, false);
     }
 
 }
