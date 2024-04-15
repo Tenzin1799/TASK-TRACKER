@@ -54,5 +54,7 @@ public final class TestDataSingleton {
     public void setColor(String color) {
         this.color = color;
     }
+
+
 }
 

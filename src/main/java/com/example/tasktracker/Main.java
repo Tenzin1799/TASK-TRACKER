@@ -1,5 +1,6 @@
 package com.example.tasktracker;
 
+import Database.DatabaseManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,8 @@ public class Main extends Application {
         stage.setFullScreen(false);
         stage.setResizable(true);
         stage.show();
+        DatabaseManager databaseManager = DatabaseManager.getInstance();
+        databaseManager.connectToDb();
     }
 
 

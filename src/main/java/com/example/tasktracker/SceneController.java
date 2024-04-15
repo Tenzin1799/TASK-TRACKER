@@ -75,8 +75,8 @@ public class SceneController implements Initializable {
             String startAMPM = startTimeAMPM.getValue();
             String endAMPM = endTimeAMPM.getValue();
             if(validateInputs(name, firstHour, lastHour, startAMPM, endAMPM)){
-                sunday.getEvents().add(new SocialEvent(name, firstHour, lastHour, startAMPM, endAMPM));
-                sunday.getEvents().sort(new EventComparator());
+               // sunday.getEvents().add(new SocialEvent(name, firstHour, lastHour, startAMPM, endAMPM));
+               // sunday.getEvents().sort(new EventComparator());
                 eventName.setText("");
                 startTime.setValue(null);
                 endTime.setValue(null);
