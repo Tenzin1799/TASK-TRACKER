@@ -14,9 +14,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-import com.example.tasktracker.WeekController; //*
-
-
 public class EditController implements Initializable {
     @FXML
     private TextField eventName;
@@ -34,11 +31,6 @@ public class EditController implements Initializable {
     private ComboBox<String> dayPicker;
     @FXML
     private Label errorLabel;
-	
-	
-
-
-
     private final ArrayList<Integer> HOURS = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ));
     private final ArrayList<String> COLORS = new ArrayList<>(Arrays.asList("Red", "Orange", "Yellow", "Green", "Blue", "Cyan"));
     private final ArrayList<String> DAYS = new ArrayList<>(Arrays.asList("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"));

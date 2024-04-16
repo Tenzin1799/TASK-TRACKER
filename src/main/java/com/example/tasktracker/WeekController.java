@@ -1,7 +1,6 @@
 package com.example.tasktracker;
 
 import Database.DatabaseManager;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,15 +21,10 @@ import java.util.ResourceBundle;
 public class WeekController implements Initializable {
     @FXML
     private GridPane week;
-	
-	
 	public static boolean UpdateButtonClicked = false;//set to false, applies to each time the pop up window gets opened.
 	public static boolean DeleteButtonClicked = false;
 	public static boolean CompleteButtonClicked = false;
-
     private ArrayList<Event> eventList = DatabaseManager.getInstance().GetEventList();
-
-    private ObservableList<Day> daysList;
     private WeekView view = new WeekView();
     final private int OFFSET = 1;   // offset duration of events by 1 when start and end are subtracted to account events that are only 1 hour.
 
@@ -161,7 +155,6 @@ public class WeekController implements Initializable {
 
         });
     }
-
     public int getDayNum(String day){
         if(day == "Sunday"){
             return 1;
@@ -184,6 +177,5 @@ public class WeekController implements Initializable {
         else
             return 7;
     }
-
 }
 
