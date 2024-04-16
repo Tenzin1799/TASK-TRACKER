@@ -135,7 +135,7 @@ public class CreateController implements Initializable {
         singleton.setLastHour(lastHour+1);
 
         // Save to the database
-        databaseManager.InsertEvent(day, name, color, firstHour, lastHour, false);
+        if(databaseManager.isConnected()) databaseManager.InsertEvent(day, name, color, firstHour, lastHour, false);
     }
 
 }

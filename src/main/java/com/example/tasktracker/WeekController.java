@@ -73,6 +73,7 @@ public class WeekController implements Initializable {
 
     // Should load events from the database into GUI
     public void loadEvents() {
+        if(!DatabaseManager.getInstance().isConnected()) return;
         for (Event event : eventList)
         {
             Button button = new Button();
